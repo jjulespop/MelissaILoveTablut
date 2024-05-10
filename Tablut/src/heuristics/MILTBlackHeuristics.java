@@ -64,7 +64,7 @@ public class MILTBlackHeuristics {
         if (!lateGame) { // Early Game
             double pawnsInTopPos = (double) getPawnsInTopPos() / TOP_POS_N;
 
-            stateValue += whitesALive * earlyGameWeights[WHITE_ALIVE];
+            stateValue -= whitesALive * earlyGameWeights[WHITE_ALIVE];
             stateValue += blacksAlive * earlyGameWeights[BLACK_ALIVE];
             stateValue += surroundKing * earlyGameWeights[BLACK_AROUND_KING];
             stateValue += pawnsInTopPos * earlyGameWeights[TOP_POS];
