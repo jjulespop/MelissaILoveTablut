@@ -8,7 +8,7 @@ public class MILTBlackHeuristics {
 	
 	private MILTState state;
 	
-	private final int WHITE_ALIVE = 0; // White pawns already eaten
+	private final int WHITE_ALIVE = 0; // White pawns still alive
     private final int BLACK_ALIVE = 1; // Black pawns still alive
     private final int BLACK_AROUND_KING = 2; // Black pawns surrounding the king
     private final int TOP_POS = 3; // Formation to prevent the king from escaping
