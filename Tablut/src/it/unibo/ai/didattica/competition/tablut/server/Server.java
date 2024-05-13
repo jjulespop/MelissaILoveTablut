@@ -118,7 +118,6 @@ public class Server implements Runnable {
 	 * 
 	 */
 	public static void main(String[] args) {
-		System.out.println("CIAO CIAO");
 		int time = 60;
 		int moveCache = -1;
 		int repeated = 0;
@@ -435,8 +434,8 @@ public class Server implements Runnable {
 				if (Character.isAlphabetic(c) || Character.isDigit(c))
 					temp += c;
 			}
-			whiteName = temp;
 			System.out.println("White player name:\t" + whiteName);
+			whiteName = temp;
 			loggSys.fine("White player name:\t" + whiteName);
 
 			

@@ -2,7 +2,7 @@ package melissaILoveTablut;
 
 import java.io.IOException;
 
-public record MILTAction(MILTState.PieceType pieceType, int from, int to) {
+public record MILTAction(MILTState.PieceType pieceType,int from, int to) {
     public it.unibo.ai.didattica.competition.tablut.domain.Action toAction() throws IOException{
     	
         int row=from/MILTState.BOARD_SIZE +1;
@@ -16,7 +16,7 @@ public record MILTAction(MILTState.PieceType pieceType, int from, int to) {
         String toStr=Character.toString((char)('a'+col))+row;
         
 
-        it.unibo.ai.didattica.competition.tablut.domain.StateTablut.Turn turn=switch(pieceType) {
+        it.unibo.ai.didattica.competition.tablut.domain.StateTablut.Turn turn=switch(pieceType){
             case BLACK_PAWN-> it.unibo.ai.didattica.competition.tablut.domain.StateTablut.Turn.BLACK;
             default -> it.unibo.ai.didattica.competition.tablut.domain.StateTablut.Turn.WHITE;
         };
@@ -24,5 +24,8 @@ public record MILTAction(MILTState.PieceType pieceType, int from, int to) {
         return new it.unibo.ai.didattica.competition.tablut.domain.Action(fromStr,toStr,turn);
     }
     
+    public MILTAction reversed() {
+    	return new MILTAction(pieceType,to,from);
+    }
     
 }
